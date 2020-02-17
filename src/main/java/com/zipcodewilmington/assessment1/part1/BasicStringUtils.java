@@ -18,7 +18,11 @@ public class BasicStringUtils {
      * @return string with identical contents, in the reverse order
      */
     public static String reverse(String str) {
-        return null;
+        String output = "";
+        for (int i = str.length() - 1; i >= 0; i--){
+            output = output + str.charAt(i);
+        }
+        return output;
     }
 
     /**
@@ -26,7 +30,12 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        String output = "";
+        for (int i = str.length() - 1; i >= 0; i--){
+            output = output + str.charAt(i);
+        }
+        String reverseCamel = output.substring(0, 1).toUpperCase() + output.substring(1).toLowerCase();
+        return reverseCamel;
     }
 
 
