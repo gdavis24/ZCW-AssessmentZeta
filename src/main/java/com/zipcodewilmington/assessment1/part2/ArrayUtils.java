@@ -27,7 +27,7 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        Object[] newArray = new Object[objectArray.length-1];
+        /*Object[] newArray = new Object[objectArray.length-1];
         int curVal = 0;
 
         for (int i = 0; i < objectArray.length; i++){
@@ -40,6 +40,10 @@ public class ArrayUtils {
             }
         }
         return newArray;
+*/
+        return null;
+
+
 
     }
 

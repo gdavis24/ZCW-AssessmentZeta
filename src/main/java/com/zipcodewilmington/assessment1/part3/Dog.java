@@ -8,6 +8,10 @@ public class Dog extends Pet {
      * @param name name of this Dog
      * @param age age of this dog
      */
+    private String name;
+    private Integer age;
+    private Pet pet;
+    private PetOwner owner;
     public Dog(String name, Integer age) {
 
     }
