@@ -1,5 +1,12 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import com.sun.tools.javac.util.List;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -27,7 +34,7 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        /*Object[] newArray = new Object[objectArray.length-1];
+        Object[] newArray = new Object[objectArray.length-1];
         int curVal = 0;
 
         for (int i = 0; i < objectArray.length; i++){
@@ -40,8 +47,10 @@ public class ArrayUtils {
             }
         }
         return newArray;
-*/
-        return null;
+
+
+        //newArray = ArrayUtils.removeValue(objectArray, objectToRemove);
+        //return newArray;
 
 
 
@@ -113,7 +122,34 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+      /*  Collection<Object> result = new ArrayList<Object>(objectArray.length + objectArrayToAdd.length);
+        for (Object val : objectArray){
+            result.add(val);
+        }
+        for (Object val : objectArrayToAdd){
+            result.add(val);
+        }
 
-        return null;
+        return result.toArray();
+
+        Object[] arrThree = new Object[objectArray.length + objectArrayToAdd.length];
+        int index = objectArrayToAdd.length;
+
+        for (int i = 0; i < objectArrayToAdd.length; i++) {
+            arrThree[i] = objectArrayToAdd[i];
+        }
+        for (int i = 0; i < objectArray.length; i++) {
+            arrThree[i + index] = objectArray[i];
+        }
+        return arrThree;
+*/
+      String list1 = Arrays.toString(objectArray);
+      String list2 = Arrays.toString(objectArrayToAdd);
+      String list3 = list1 + list2;
+      Object[] newArray = list3.split("");
+        return newArray;
+
     }
+
+
 }
