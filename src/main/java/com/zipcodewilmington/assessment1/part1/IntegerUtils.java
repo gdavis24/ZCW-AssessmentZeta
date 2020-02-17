@@ -38,7 +38,11 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
+        int reverse = 0;
+        for (int i = val; i != 0; i /= 10){
+            reverse = reverse * 10 + i % 10;
+        }
 
-        return null;
+        return reverse;
     }
 }
