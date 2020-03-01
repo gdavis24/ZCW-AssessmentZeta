@@ -34,25 +34,41 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        Object[] newArray = new Object[objectArray.length-1];
-        int curVal = 0;
-
-        for (int i = 0; i < objectArray.length; i++){
-            if (objectArray[i] == objectToRemove){
-
-            }
-            else {
-                newArray[curVal] = objectArray[i];
-                curVal++;
-            }
-        }
-        return newArray;
+//        Object[] newArray = new Object[objectArray.length-1];
+//        int curVal = 0;
+//
+//        for (int i = 0; i < objectArray.length; i++){
+//            if (objectArray[i] == objectToRemove){
+//
+//            }
+//            else {
+//                newArray[curVal] = objectArray[i];
+//                curVal++;
+//            }
+//        }
+//        return newArray;
 
 
         //newArray = ArrayUtils.removeValue(objectArray, objectToRemove);
         //return newArray;
 
+        int index = 0;
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].equals(objectToRemove)) {
+                objectArray[i] = null;
+                index++;
+            }
+        }
+        Integer newIndex = 0;
+        Integer[] newArray = new Integer[objectArray.length - index];
+        for (int j = 0; j < objectArray.length; j++) {
+            if (objectArray[j] != null) {
+                newArray[newIndex] = (Integer) objectArray[j];
+                newIndex++;
+            }
+        }
 
+        return newArray;
 
     }
 
@@ -143,12 +159,21 @@ public class ArrayUtils {
         }
         return arrThree;
 */
-      String list1 = Arrays.toString(objectArray);
-      String list2 = Arrays.toString(objectArrayToAdd);
-      String list3 = list1 + list2;
-      Object[] newArray = list3.split("");
-        return newArray;
+//      String list1 = Arrays.toString(objectArray);
+//      String list2 = Arrays.toString(objectArrayToAdd);
+//      String list3 = list1 + list2;
+//      Object[] newArray = list3.split("");
+//        return newArray;
 
+        Integer lengthA = objectArray.length;
+        Integer lengthB = objectArrayToAdd.length;
+        Integer fullLength = lengthA + lengthB;
+        Object[] newArray = new Integer[lengthA + lengthB];
+
+        System.arraycopy(objectArray, 0, newArray, 0, lengthA);
+        System.arraycopy(objectArrayToAdd, 0, newArray, lengthA,lengthB );
+
+        return newArray;
     }
 
 

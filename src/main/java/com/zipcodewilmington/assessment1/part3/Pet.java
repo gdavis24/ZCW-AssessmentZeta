@@ -14,6 +14,7 @@ public abstract class Pet implements Animal {
     private PetOwner owner;
     public Pet() {
         this.name = "";
+        this.age = 0;
     }
 
     /**
@@ -21,6 +22,7 @@ public abstract class Pet implements Animal {
      */
     public Pet(String name) {
         this.name = name;
+        this.age = 0;
     }
 
 
@@ -29,6 +31,7 @@ public abstract class Pet implements Animal {
      */
     public Pet(int age) {
         this.age = age;
+        this.name = "";
     }
 
     /**
@@ -45,7 +48,7 @@ public abstract class Pet implements Animal {
      */
     public String getName() {
 
-        return name;
+        return this.name;
     }
 
     /**
@@ -53,7 +56,7 @@ public abstract class Pet implements Animal {
      */
     public Integer getAge() {
 
-        return age;
+        return this.age;
     }
 
     /**
@@ -61,7 +64,7 @@ public abstract class Pet implements Animal {
      * ensure this instance of `Pet` is added to the owner's composite `pets` list
      */
     public void setOwner(PetOwner newPetOwner) {
-        this.owner = owner;
+        this.owner = newPetOwner;
     }
 
     /**
@@ -69,6 +72,6 @@ public abstract class Pet implements Animal {
      */
     public PetOwner getOwner() {
 
-        return owner;
+        return this.owner;
     }
 }
